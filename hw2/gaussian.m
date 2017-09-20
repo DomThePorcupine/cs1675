@@ -1,0 +1,10 @@
+x = [-3:.1:3];
+norml = normpdf(x,0,1);
+subplot(3,1,1);
+plot(x,norml);
+norml = normpdf(x,.5,1);
+subplot(3,1,2);
+plot(x,norml);
+norml = normpdf(x,0,2);
+subplot(3,1,3);
+plot(x,norml);

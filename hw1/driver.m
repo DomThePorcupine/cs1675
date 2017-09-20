@@ -18,4 +18,3 @@ age = A(:,8)';
 class_v = A(:,9)';
 
 [foo barb] = divideset2(A, .66);
-disp(size(foo))

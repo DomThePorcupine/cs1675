@@ -1,13 +1,12 @@
-id = fopen('mean-study-data.txt', 'r');
+id = fopen('resampling-data.txt', 'r');
 input_format = '%f\n';
 
 study_data = fscanf(id, input_format);
 
-mean_vals = zeros(1000,1);
-
-for i=1:1000
-    mean_vals(i) = mean(subsample(study_data, 20));
+for i=1:10
+    [trn, tst] = kfold_crossvalidation(study_data, 10, i);
+    %disp(trn(2));
+    disp(tst);
+    out = sprintf('%d | mean: %d, std: %d', i, mean(tst), std(tst));
+    %disp(out);
 end
-
-disp(mean(mean_vals));
-histogram(mean_vals, 20);

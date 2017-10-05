@@ -1,3 +1,5 @@
 function weights = LR_solve(X, y)
-  weights = length(X);
+  % Weights as defined by the homework
+  % assignment
+  weights = X\y;
 end

@@ -1,13 +1,13 @@
 study_data = load('housing.txt');
 
 attrs = ["CRIM", "ZN", "INDUS", "CHAS", "NOX", "RM", "AGE", "DIS", "RAD", "TAX", "PTRATIO", "B", "LSTAT", "MEDV"];
-%{
+
 for i=1:13
   disp(attrs(i));
   scatter_plot(study_data(:,i), study_data(:,14));
   w = waitforbuttonpress;
 end
-%}
+%{
 coefs = zeros(91,3);
 count = 1;
 
@@ -29,3 +29,4 @@ for i = 1:91
   disp(toprnt);
 end
 %disp(srtd);
+%}

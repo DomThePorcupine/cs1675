@@ -18,6 +18,8 @@ for k = 1:1:K                       %%% number of steps
         y = Y(row,:);
         f = 1/(1 + exp(-(W'*x)));
         err = (y - f) * x;          % error (on-line gradient)
+        disp(err);
+        return
         sum_err = sum_err + err;    % update batch error function gradient
     end
     alpha = 2/sqrt(k);

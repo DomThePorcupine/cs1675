@@ -3,7 +3,7 @@ function [test_y, E] = Boost_classifier(tr_x, tr_y, test_x, params)
 % Classify using the AdaBoost algorithm
 % *** Inputs:
 % 	train_patterns - Train patterns
-%   	train_targets  - Train targets
+%   train_targets  - Train targets
 %  	test_patterns  -  Test patterns
 %  	params =       
 %  	[base_classifier,   - base classifier
@@ -63,7 +63,7 @@ for k = 1:k_max,
    test_y  = test_y + alpha_k*(2*Ck(M+1:end)-1);
    
 %   if (k/IterDisp == floor(k/IterDisp)),
-      disp(['Completed ' num2str(k) ' boosting iterations'])
+    %disp(['Completed ' num2str(k) ' boosting iterations'])
  %  end
    
 end

@@ -116,11 +116,11 @@ for t=2:10
   av_test = 0;
   av_train = 0;
   for j=1:20
-    [test_y] = Bag_classifier(train_x,train_class,test_x,sprintf('[@DT_base_full,%d,[]]', t));
+    [test_y] = Bag_classifier(train_x,train_class,test_x,sprintf('[@DT_base_simple,%d,[]]', t));
     mn = mean_misclass_error(test_class, test_y);
     av_test = av_test + mn;
 
-    [train_y] = Bag_classifier(train_x,train_class,train_x,sprintf('[@DT_base_full,%d,[]]', t));
+    [train_y] = Bag_classifier(train_x,train_class,train_x,sprintf('[@DT_base_simple,%d,[]]', t));
     mn = mean_misclass_error(train_class, train_y);
     av_train = av_train + mn;
   end
